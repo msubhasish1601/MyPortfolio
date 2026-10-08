@@ -344,7 +344,7 @@ button {
    NAVIGATION
 ──────────────────────────────────────────────────────────── */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
   z-index: 1000;
@@ -492,9 +492,10 @@ button {
 
 /* Mobile Menu */
 .mobile-menu {
-  position: fixed;
-  top: var(--nav-h);
+  position: absolute;
+  top: 100%;
   left: 0; right: 0;
+  height: 100vh;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
   padding: 1rem var(--container-px) 1.5rem;
@@ -502,7 +503,7 @@ button {
   opacity: 0;
   pointer-events: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 999;
+  z-index: -1;
 }
 
 .mobile-menu.open {
@@ -536,7 +537,6 @@ button {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: var(--nav-h);
   overflow: hidden;
 }
 
